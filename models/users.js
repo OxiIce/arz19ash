@@ -9,15 +9,17 @@ const UserSchema = new mongoose.Schema({
         maxlength:50
     },
     timeOnPosts: {
-        type:String,
+        type:Number,
         required:true,
-        minlength:0,
-        maxlength:10
+        min:0,
+        max:999999
     },
     numberOfLicenses: {
-        type:String,
+        type:Number,
         required:true,
-        minlength:0,
-        maxlength:10
+        min:0,
+        max:999999
     }
 });
+
+module.exports = new mongoose.model('Users', UserSchema)
