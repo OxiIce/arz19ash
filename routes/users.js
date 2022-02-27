@@ -9,7 +9,8 @@ router.post('/', (req,res) => {
     user = new User({
         name:req.body.userName,
         timeOnPosts:req.body.timeOnPosts,
-        numberOfLicenses:req.body.numberOfLicenses
+        numberOfLicenses:req.body.numberOfLicenses,
+        timeOfLastUp:req.body.timeOfLastUp
     });
 
     user.save().then(user => {
@@ -56,7 +57,8 @@ router.put("/:userId", async (req,res) => {
     const updatedUser = await User.findByIdAndUpdate(req.params.userId, {
         name:req.body.userName,
         timeOnPosts:req.body.timeOnPosts,
-        numberOfLicenses:req.body.numberOfLicenses
+        numberOfLicenses:req.body.numberOfLicenses,
+        timeOfLastUp:req.body.timeOfLastUp
     },
     {new:true})
 
