@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema({
     timeOfLastUp: {
         type:String,
         required:true,
-        minlength:3,
+        minlength:0,
         maxlength:50
     }
 });
